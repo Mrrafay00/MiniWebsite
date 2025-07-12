@@ -64,14 +64,16 @@ nav ul li a:hover {
 .hero {
     background-color: #4ECDC4;
     color: white;
-    padding: 150px 0 100px;
+    padding: 150px 0 120px; /* Increased bottom padding */
     margin-top: 60px;
+    margin-bottom: 40px; /* Added space below home section */
 }
 
 .hero .container {
     display: flex;
     align-items: center;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .hero-content {
@@ -80,6 +82,7 @@ nav ul li a:hover {
 
 .hero-image {
     flex: 1;
+    margin-top: 30px;
 }
 
 .hero-image img {
@@ -88,6 +91,7 @@ nav ul li a:hover {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Typography in Hero */
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -123,14 +127,20 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .about-image {
     flex: 1;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .about-image img {
+    display: block;
     width: 100%;
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
 }
 
@@ -159,6 +169,7 @@ nav ul li a:hover {
     justify-content: center;
     gap: 30px;
     margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .benefit-card {
@@ -226,16 +237,19 @@ footer p:first-child {
         margin: 0 10px;
     }
 
-    .hero .container, .about .container {
+    .hero .container,
+    .about .container {
         flex-direction: column;
     }
 
     .hero {
-        padding: 120px 0 80px;
+        padding: 120px 0 100px;
     }
 
-    .hero-image, .about-image {
+    .hero-image,
+    .about-image {
         margin-top: 30px;
+        width: 100%;
     }
 
     .benefit-card {
@@ -267,11 +281,11 @@ footer p:first-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     padding: 20px;
-    background-color: #f5f5f5; /* Optional background */
-    margin-top: 40px;      /* Added top margin */
-    margin-bottom: 40px;   /* Added bottom margin */
+    background-color: #f5f5f5;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .form-container {
@@ -281,7 +295,7 @@ footer p:first-child {
     padding: 100px;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    margin: 55px auto; /* Center horizontally */
+    margin: 55px auto;
 }
 
 h1 {
@@ -301,7 +315,8 @@ label {
     font-weight: 500;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid var(--border);
@@ -311,7 +326,8 @@ input, textarea {
     transition: all 0.3s;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px var(--primary-light);
@@ -371,7 +387,7 @@ textarea {
     display: none;
 }
 
-/* Responsive Design */
+/* Responsive Design for Form */
 @media (max-width: 768px) {
     .form-container {
         padding: 30px;
@@ -381,6 +397,14 @@ textarea {
 @media (max-width: 480px) {
     .form-container {
         padding: 25px 20px;
+    }
+
+    label, input, textarea {
+        font-size: 14px;
+    }
+
+    input, textarea {
+        padding: 10px 12px;
     }
 
     h1 {
